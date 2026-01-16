@@ -71,18 +71,19 @@
         }
         .os-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; line-height: 1.1; }
         .os-text { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin-bottom: 30px; }
-        .client-pills { display: flex; gap: 15px; flex-wrap: wrap; }
-        .client-pill {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .client-logos { display: flex; gap: 30px; flex-wrap: wrap; align-items: center; }
+        .client-logo-item {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: opacity 0.2s;
         }
+        .client-logo-item:hover { opacity: 1; }
+        .client-logo-item.unrivaled { height: 45px; }
+        .client-logo-item.teamusa { height: 50px; }
+        .client-logo-item.momentous { height: 35px; }
         .snapshot-section {
             background: linear-gradient(135deg, rgba(38, 59, 128, 0.3) 0%, rgba(15, 23, 42, 0.8) 100%);
             border: 1px solid var(--fcc-orange);
@@ -193,8 +194,11 @@
         .check-list { list-style: none; }
         .check-list li { font-size: 0.75rem; margin-bottom: 8px; padding-left: 15px; position: relative; color: #ddd; }
         .check-list li::before { content: '✓'; color: var(--success); position: absolute; left: 0; font-weight: bold; }
-        .advisory-card { background: var(--fcc-blue); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(255,255,255,0.1); }
+        .advisory-card { background: var(--fcc-blue); border-radius: 12px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.1); }
         .advisory-badge { background: #fff; color: var(--fcc-blue); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; align-self: flex-start; margin-bottom: 15px; }
+        .advisory-features { margin-top: 15px; }
+        .advisory-features li { font-size: 0.8rem; color: rgba(255,255,255,0.85); margin-bottom: 6px; padding-left: 18px; position: relative; list-style: none; }
+        .advisory-features li::before { content: '✓'; color: var(--success); position: absolute; left: 0; font-weight: bold; }
         @media (max-width: 900px) {
             .pricing-section { grid-template-columns: 1fr; }
             .pricing-grid { grid-template-columns: 1fr; }
@@ -205,6 +209,7 @@
             .y-axis { display: none; }
             .projection-metrics { grid-template-columns: 1fr; }
             .snapshot-grid { grid-template-columns: repeat(2, 1fr); }
+            .client-logos { justify-content: center; }
         }
         @media (max-width: 600px) { .snapshot-grid { grid-template-columns: 1fr; } }
     </style>
@@ -231,10 +236,10 @@
             <br><br>
             We work with partners ranging from <strong>Unrivaled Basketball</strong> and <strong>Team USA</strong> to <strong>Investment Funds</strong> to help maximize digital value and reduce operational costs for asset operators.
         </p>
-        <div class="client-pills">
-            <div class="client-pill">Unrivaled Basketball</div>
-            <div class="client-pill">Team USA</div>
-            <div class="client-pill">Investment Funds</div>
+        <div class="client-logos">
+            <img src="https://www.unrivaled.basketball/images/icon-mask.png" alt="Unrivaled Basketball" class="client-logo-item unrivaled">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Team_USA.png" alt="Team USA" class="client-logo-item teamusa">
+            <img src="https://momentous-sports.com/wp-content/uploads/2025/06/White-With-Shadow-1024x202.png" alt="Momentous Sports" class="client-logo-item momentous">
         </div>
     </div>
 
@@ -378,13 +383,19 @@
 
         <div class="advisory-card">
             <div>
-                <span class="advisory-badge">Executive Reporting Add-On</span>
-                <h3 style="color:#fff; font-size:1.5rem; margin-top:10px;">Strategic Advisory Services</h3>
-                <p style="color:#fff; opacity:0.8; margin-top:5px;">Quarterly "Owner-Ready" reports proving the dollars & cents of social.</p>
+                <span class="advisory-badge">Strategic Advisory Add-On</span>
+                <h3 style="color:#fff; font-size:1.5rem; margin-top:10px;">Executive Advisory Services</h3>
+                <p style="color:#fff; opacity:0.8; margin-top:5px;">Hands-on strategic partnership to maximize your digital ROI.</p>
+                <ul class="advisory-features">
+                    <li>Up to 10 hours/month</li>
+                    <li>Weekly check-in calls</li>
+                    <li>Weekend support access</li>
+                    <li>90-day content team roadmaps</li>
+                    <li>Exclusive beta features</li>
+                </ul>
             </div>
             <div style="text-align:right; margin-top: 20px;">
-                <div style="font-size:2.5rem; font-weight:800; color:var(--success);">$750<span style="font-size:1rem; color:#fff;">/mo</span></div>
-                <div style="font-size:0.8rem; color:#fff; opacity:0.6;">(Discounted from $1,500)</div>
+                <div style="font-size:2.5rem; font-weight:800; color:var(--success);">$1,750<span style="font-size:1rem; color:#fff;">/mo</span></div>
             </div>
         </div>
     </div>
